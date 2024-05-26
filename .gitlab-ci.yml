@@ -45,5 +45,5 @@ deploy-job:      # This job runs in the deploy stage.
   stage: deploy   # It only runs when *both* jobs in the package stage complete successfully.
   script:
     - echo "Deploying application on the target server..."
-    - sshpass -p "${SERVER_PSWD}" ssh -o StrictHostKeyChecking=no ${SERVER_IP} "cd ~/nlp_fakeNews && python3 -m venv venv && source venv/bin/activate && pip3 install -r requirements.txt"  # 使用群组继承的 SERVER_IP 和 SERVER_PSWD 变量
+    - sshpass -p "${SERVER_PSWD}" ssh -o StrictHostKeyChecking=no ${SERVER_IP} "cd ~/nlp_fakeNews && apt install python3.10-venv && python3 -m venv venv && source venv/bin/activate && pip3 install -r requirements.txt"  # 使用群组继承的 SERVER_IP 和 SERVER_PSWD 变量
     - echo "Application deployed and executed successfully."
