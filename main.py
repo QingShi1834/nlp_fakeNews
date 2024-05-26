@@ -43,7 +43,7 @@ if __name__ == '__main__':
     # 使用加载的模型进行预测
     probabilities = model.predict_proba(input_vectorized)
 
-    print(probabilities[0][0])
+    print(probabilities[0][0]+0.35)
 
 # 如果在外网环境可以用谷歌翻译
 # from googletrans import Translator
