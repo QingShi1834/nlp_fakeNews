@@ -10,7 +10,7 @@ project_directory = "~/nlp_fakeNews"
 nltk.data.path.append(project_directory)
 
 # 下载stopwords并保存到指定路径
-nltk.download('stopwords', download_dir=project_directory)
+# nltk.download('stopwords', download_dir=project_directory)
 
 
 def stemming(content):
@@ -29,13 +29,13 @@ if __name__ == '__main__':
     port_stem = PorterStemmer()
     processed_input = stemming(input_string)
 
-    vectorizer = joblib.load(r'D:\NJU\SEIII\nlp_fakeNews\tfidf_vectorizer.pkl')
+    vectorizer = joblib.load(r'~/nlp_fakeNews/tfidf_vectorizer.pkl')
 
     # 使用加载的向量化器将文本转换为数值特征
     input_vectorized = vectorizer.transform([processed_input])
 
     # 加载模型
-    model = joblib.load(r'D:\NJU\SEIII\nlp_fakeNews\logistic_regression_model.pkl')
+    model = joblib.load(r'~/nlp_fakeNews\logistic_regression_model.pkl')
 
     # 使用加载的模型进行预测
     prediction = model.predict(input_vectorized)
