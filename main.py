@@ -6,7 +6,7 @@ import re
 from nltk.corpus import stopwords
 
 # 指定下载路径为你的项目目录
-project_directory = "D:/NJU/SEIII/nlp_fakeNews"
+project_directory = " ~/nlp_fakeNews"
 nltk.data.path.append(project_directory)
 
 # 下载stopwords并保存到指定路径
